@@ -59,6 +59,8 @@ io.on('connection', (socket) => {
   });
 });
 
+console.log(encodeURIComponent("2U8zqHynNSxD5zY1"));
+
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
