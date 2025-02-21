@@ -13,7 +13,7 @@ const Chat = () => {
 
   useEffect(() => {
     // Connect to Socket.IO server
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io('https://chat-app-sigma-two-55.vercel.app');
 
     // Join the default room
     socketRef.current.emit('join_room', room);
@@ -33,7 +33,7 @@ const Chat = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/messages/${room}`);
+      const response = await axios.get(`https://chat-app-sigma-two-55.vercel.app/api/messages/${room}`);
       setMessages(response.data);
     } catch (error) {
       console.error('Error fetching messages:', error);
@@ -59,7 +59,7 @@ const Chat = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/messages', messageData);
+      const response = await axios.post('https://chat-app-sigma-two-55.vercel.app/api/messages', messageData);
       socketRef.current.emit('send_message', response.data);
       setMessages(prev => [...prev, response.data]);
       setMessage('');
