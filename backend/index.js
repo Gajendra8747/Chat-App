@@ -62,7 +62,7 @@ io.on('connection', (socket) => {
 console.log(encodeURIComponent("2U8zqHynNSxD5zY1"));
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI) //mongodb://127.0.0.1:27017/chat-app
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
