@@ -33,6 +33,10 @@ const io = new Server(httpServer, {
 app.use(cors());
 app.use(express.json());
 
+// server check
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
